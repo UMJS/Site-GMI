@@ -1,0 +1,96 @@
+/* Paleta de Cores (do style.css) */
+:root {
+    --dark-green: #0A5D2A;
+    --light-green: #6DAD3A;
+    --gold-yellow: #FBC02D;
+    --off-white-bg: #F8FBF6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--off-white-bg);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+#user-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--dark-green);
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.login-container h2 {
+    color: var(--dark-green);
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/*
+    *** MUDANÇA AQUI ***
+    Adicionamos ", .input-group select" para que o <select>
+    tenha o mesmo estilo do <input>
+*/
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em; /* Garante que o texto fique do mesmo tamanho */
+    background-color: white; /* Fundo branco para o select */
+}
+
+#error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    display: none;
+}
+
+#login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--dark-green);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+    background-color: var(--light-green);
+}

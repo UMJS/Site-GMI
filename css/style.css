@@ -1,0 +1,289 @@
+/* Paleta de Cores (do site original) */
+:root {
+    --dark-green: #0A5D2A;
+    --light-green: #6DAD3A;
+    --gold-yellow: #FBC02D;
+    --off-white-bg: #F8FBF6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--off-white-bg);
+    margin: 0;
+    padding: 10px;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho do Projeto (do site original) */
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: var(--dark-green);
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.project-title img {
+    width: 50px;
+    height: auto;
+}
+
+.project-title h1 {
+    flex-grow: 1;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.project-title h1 span {
+    display: block;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/* Título da Seção (do site original) */
+.shift-section {
+    margin-bottom: 30px;
+}
+
+.shift-section h2 {
+    color: var(--dark-green);
+    border-bottom: 2px solid var(--gold-yellow);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+/* Controles de data */
+.date-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.date-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-selector select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.date-navigation button {
+    background-color: var(--dark-green);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.date-navigation button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Grid de alunos */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 15px;
+}
+
+.student-card {
+    border: 2px solid var(--dark-green);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.student-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.student-card .name {
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+    height: 3.2em;
+    line-height: 1.1em;
+    overflow: hidden;
+}
+
+/* Estado de Presença */
+.student-card.is-absent {
+    opacity: 0.4;
+    background-color: #f9f9f9;
+    border-color: #aaa;
+}
+.student-card.is-absent img {
+    filter: grayscale(100%);
+}
+
+/* Modal para visualização da tabela */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 95%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Tabela dentro do Modal */
+.table-wrapper {
+    overflow-x: auto; /* Permite rolar a tabela horizontalmente em telas pequenas */
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.attendance-table th, .attendance-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    min-width: 50px; /* Largura mínima para colunas */
+}
+
+.attendance-table th {
+    background-color: var(--dark-green);
+    color: white;
+    font-size: 0.9em;
+}
+
+.attendance-table td:first-child {
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.85em;
+    min-width: 150px;
+}
+
+.attendance-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.attendance-table .present {
+    background-color: #d4edda;
+    color: #155724;
+    font-weight: bold;
+}
+
+.attendance-table .absent {
+    background-color: #f8d7da;
+    color: #721c24;
+    font-weight: bold;
+}
+
+/* Botões de ação */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.action-buttons button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.view-table-btn {
+    background-color: var(--light-green);
+    color: white;
+}
+
+.save-btn {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.reset-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .date-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .date-navigation {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons button {
+        width: 100%;
+    }
+}

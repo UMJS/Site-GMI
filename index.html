@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Presença (Mobile) - Protetor Mirim</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="project-title">
+            <img src="img/PAM.png" alt="Logo do Projeto Protetor Mirim Ambiental">
+            <h1>PROJETO PROTETOR MIRIM<span>CONTROLE DE PRESENÇA</span></h1>
+        </div>
+
+        <div class="date-controls">
+            <div class="date-selector">
+                <label for="date-select">Data:</label>
+                <select id="date-select">
+                   
+                </select>
+            </div>
+            <div class="date-navigation">
+                <button id="prev-date">← Data Anterior</button>
+                <button id="next-date">Próxima Data →</button>
+            </div>
+        </div>
+
+        <div class="shift-section">
+            <h2>TURNO DA MANHÃ</h2>
+            <div class="student-grid" id="morning-grid"></div>
+        </div>
+
+        <div class="shift-section">
+            <h2>TURNO DA TARDE</h2>
+            <div class="student-grid" id="afternoon-grid"></div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="view-table-btn" id="view-table">Ver Tabela Completa</button>
+            <button class="save-btn" id="save-data">Salvar Dados</button>
+            <button class="reset-btn" id="reset-data">Limpar Dados</button>
+        </div>
+    </div>
+
+    <div class="modal" id="table-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Controle de Presença Completo</h2>
+            <div class="table-wrapper">
+                <div id="modal-table-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
